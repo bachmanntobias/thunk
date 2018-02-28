@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
+import Reise from './components/reise';
+
 export default class App extends Component {
   componentWillmount() {
       this.props.fetchUsers();
   }
+
 
   renderUser({id, name, email}) {
     return (
@@ -23,6 +26,9 @@ render() {
   return (
     <div>
       <h4>Hi</h4>
+      <Reise/>
+      <h1>Blogpost</h1>
+
 <ul className="list-group">
   {this.props.users.map(this.renderUser)}
 </ul>
